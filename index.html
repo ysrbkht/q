@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>القرآن الكريم</title>
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#EDF3EF" id="theme-color-meta">
+<link rel="icon" type="image/png" sizes="48x48" href="./icons/maskable_icon_x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./icons/maskable_icon_x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/maskable_icon_x192.png">
+<link rel="apple-touch-icon" href="./icons/maskable_icon_x192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="القرآن">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Almarai:wght@400;700;800&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+/* رنگ نوار وضعیت قبل از اولین نقاشی صفحه با تم ذخیره‌شده هماهنگ می‌شود */
+(function(){try{var c={abi:['#EAF2FC','#070D1B'],modern:['#EDF3EF','#06100D']},
+st=localStorage.getItem('quran-theme-style');if(!c[st])st='modern';
+var m=localStorage.getItem('quran-theme-mode')||'auto';
+var n=m==='night'||(m==='auto'&&matchMedia('(prefers-color-scheme: dark)').matches);
+var v=c[st][n?1:0];
+document.getElementById('theme-color-meta').setAttribute('content',v);
+document.documentElement.style.backgroundColor=v;}catch(e){}})();
+</script>
+<style>
+:root{--fs:'Vazirmatn',-apple-system,'SF Arabic',system-ui,Tahoma,sans-serif;--fk:'Almarai','Vazirmatn',-apple-system,sans-serif;--top:calc(env(safe-area-inset-top,0px) + 76px);--bot:calc(env(safe-area-inset-bottom,0px) + 104px);--ease:cubic-bezier(.32,.72,0,1);--dg:#E5483D}
+body.theme-modern{--bg:#EDF3EF;--tx:#10231C;--mut:#5E7469;--ac:#0F7B61;--ac2:#C9A24B;--on:#fff;--gl:rgba(255,255,255,.7);--gb:rgba(255,255,255,.8);--bd:rgba(15,123,97,.16);--sheet:rgba(246,250,248,.92);--fill:rgba(15,60,45,.07);--b1:rgba(15,123,97,.22);--b2:rgba(201,162,75,.26)}
+body.theme-modern.night-mode{--bg:#06100D;--tx:#EAF4EF;--mut:#8CA79B;--ac:#3FD0A4;--ac2:#E0BC6A;--on:#05231A;--gl:rgba(24,44,37,.62);--gb:rgba(255,255,255,.14);--bd:rgba(255,255,255,.12);--sheet:rgba(13,26,21,.94);--fill:rgba(255,255,255,.08);--b1:rgba(63,208,164,.2);--b2:rgba(224,188,106,.14)}
+body.theme-abi{--bg:#EAF2FC;--tx:#12223D;--mut:#5B6F8C;--ac:#2B6ED9;--ac2:#7AB0FF;--on:#fff;--gl:rgba(255,255,255,.7);--gb:rgba(255,255,255,.85);--bd:rgba(43,110,217,.16);--sheet:rgba(244,248,254,.93);--fill:rgba(20,60,130,.07);--b1:rgba(43,110,217,.22);--b2:rgba(122,176,255,.3)}
+body.theme-abi.night-mode{--bg:#070D1B;--tx:#EEF3FF;--mut:#8EA2C8;--ac:#5AA2FF;--ac2:#9CC6FF;--on:#04142B;--gl:rgba(20,32,58,.62);--gb:rgba(255,255,255,.13);--bd:rgba(255,255,255,.12);--sheet:rgba(12,20,40,.94);--fill:rgba(255,255,255,.08);--b1:rgba(90,162,255,.2);--b2:rgba(156,198,255,.12)}
+body.lang-ar{--fs:var(--fk)}
+html{background:#EDF3EF}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+::-webkit-scrollbar{display:none}
+body,.splash-overlay{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cpath d='M36 5l7 16 16-7-7 16 16 7-16 7 7 16-16-7-7 16-7-16-16 7 7-16-16-7 16-7-7-16 16 7z' fill='none' stroke='%23888' stroke-opacity='.13'/%3E%3C/svg%3E"),radial-gradient(60% 40% at 12% 8%,var(--b1),transparent 70%),radial-gradient(50% 38% at 95% 32%,var(--b2),transparent 70%),radial-gradient(70% 40% at 50% 104%,var(--b1),transparent 70%),var(--bg);background-attachment:fixed}
+body{font-family:var(--fs);color:var(--tx);position:fixed;inset:0;overflow:hidden;touch-action:none;line-height:1.5;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:color .4s}
+.ic{width:1em;height:1em;fill:currentColor;flex-shrink:0}
+button{font-family:inherit;border:0;background:none;color:inherit;cursor:pointer}
+input{font-family:inherit;color:inherit}
+.glass{background:var(--gl);backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border:1px solid var(--bd);box-shadow:0 8px 28px rgba(0,0,0,.13)}
+
+/* ---------- نوار بالا ---------- */
+.hdr{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:12px;right:12px;max-width:620px;margin:auto;height:58px;border-radius:29px;z-index:100;display:flex;align-items:center;gap:6px;padding:0 8px;transition:transform .45s var(--ease),opacity .35s}
+.chip{height:42px;border-radius:21px;background:var(--fill);border:1px solid var(--bd);font-family:var(--fs);font-size:15px;font-weight:700;padding:0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.chip:active{transform:scale(.95)}
+#hdrJuz{color:var(--ac)}
+#hdrSurah{color:var(--tx);flex:1;min-width:0}
+.rbtn{width:42px;height:42px;border-radius:50%;background:var(--fill);color:var(--ac);font-size:19px;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.rbtn:active{transform:scale(.88)}
+.rbtn.on{color:var(--ac2)}
+
+/* ---------- داک پایین (سبک iOS) ---------- */
+.dock{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);left:12px;right:12px;max-width:520px;margin:auto;padding:6px 8px;border-radius:32px;z-index:100;display:flex;transition:transform .45s var(--ease),opacity .35s}
+.dock-btn{flex:1;min-width:0;height:70px;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:10.5px;font-weight:600;color:var(--tx);transition:transform .2s}
+.dock-btn:active{transform:scale(.92)}
+.dock-btn span{opacity:.85;white-space:nowrap}
+.dock-ic{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 20%,transparent),color-mix(in srgb,var(--ac2) 20%,transparent));display:flex;align-items:center;justify-content:center;color:var(--ac);font-size:20px}
+.desk{display:none}
+body.immersive .hdr,body.is-fs .hdr{transform:translateY(-140%);opacity:0;pointer-events:none}
+body.immersive .dock,body.is-fs .dock{transform:translateY(170%);opacity:0;pointer-events:none}
+body.immersive,body.is-fs{--top:calc(env(safe-area-inset-top,0px) + 8px);--bot:calc(env(safe-area-inset-bottom,0px) + 8px)}
+body.is-fs{--top:14px;--bot:14px}
+@media(max-height:480px){:root{--top:calc(env(safe-area-inset-top,0px) + 6px);--bot:6px}.hdr,.dock{opacity:.96}}
+
+/* ---------- کتاب ---------- */
+.main-content{position:fixed;inset:0;touch-action:none}
+.book-area{position:absolute;left:8px;right:8px;top:var(--top);bottom:var(--bot);display:flex;align-items:center;justify-content:center;transition:top .45s var(--ease),bottom .45s var(--ease)}
+#book{display:block;border-radius:2px;box-shadow:0 2px 9px rgba(0,0,0,.24),0 0 0 .5px rgba(0,0,0,.14);transform-origin:center;will-change:transform;touch-action:none}
+#book.spread{box-shadow:0 6px 22px rgba(0,0,0,.3),0 0 0 .5px rgba(0,0,0,.16)}
+.nav-btn{position:fixed;top:0;bottom:0;width:clamp(64px,11vw,200px);z-index:80;display:none;align-items:center;justify-content:center;font-size:24px;color:var(--ac);cursor:pointer;direction:ltr;padding:0 14px}
+.nav-btn .ic{box-sizing:content-box;padding:13px;border-radius:50%;background:var(--gl);border:1px solid var(--bd);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;transition:opacity .25s,transform .25s}
+.nav-btn:hover .ic{opacity:1}
+.nav-btn:active .ic{transform:scale(.88)}
+.nav-right{right:0;justify-content:flex-end}.nav-left{left:0;justify-content:flex-start}
+@media(min-width:769px){.desk{display:flex}.nav-btn{display:flex}}
+.toast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 84px);left:50%;transform:translate(-50%,-10px);opacity:0;pointer-events:none;z-index:150;display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;font-size:13px;font-weight:600;transition:.3s var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast .ic{color:var(--ac2);font-size:18px}
+.progress-pill{position:fixed;top:calc(env(safe-area-inset-top,0px) + 84px);left:50%;transform:translateX(-50%);display:none;z-index:150;padding:8px 16px;border-radius:99px;font-size:12px;font-weight:600}
+
+/* ---------- شیت‌ها ---------- */
+.overlay{position:fixed;inset:0;display:none;align-items:flex-end;justify-content:center;z-index:2500}
+.overlay.active{display:flex}
+.overlay-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.36);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);animation:fade .3s}
+.modal-card,.juz-card{position:relative;width:100%;max-width:480px;max-height:90dvh;overflow-y:auto;background:var(--sheet);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border:1px solid var(--bd);border-bottom:0;border-radius:28px 28px 0 0;padding:22px 16px calc(env(safe-area-inset-bottom,0px) + 16px);box-shadow:0 -10px 50px rgba(0,0,0,.25);animation:sheet .45s var(--ease);touch-action:pan-y;color:var(--tx)}
+.modal-card::before,.juz-card::before{content:'';display:block;width:38px;height:5px;border-radius:3px;background:var(--mut);opacity:.4;margin:-10px auto 14px;flex-shrink:0}
+.juz-card{height:86dvh;max-width:560px;display:flex;flex-direction:column;overflow:hidden}
+@media(min-width:700px){.overlay{align-items:center}.modal-card,.juz-card{border-radius:28px;border-bottom:1px solid var(--bd)}.juz-card{height:80dvh}}
+@keyframes sheet{from{transform:translateY(100%)}}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+@keyframes pop{from{opacity:0;transform:scale(1.12)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(-3px)}50%{transform:translateY(3px)}}
+.sheet-title{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;margin-bottom:12px}
+.sheet-title .ic{color:var(--ac);font-size:24px}
+.sheet-title.center{justify-content:center;font-size:17px}
+
+/* ---------- تنظیمات (گروه‌بندی‌شده مثل iOS) ---------- */
+.grp{background:var(--fill);border-radius:16px;margin:10px 0;overflow:hidden}
+.row{display:flex;align-items:center;gap:12px;padding:9px 12px;min-height:50px;position:relative}
+.row+.row::before{content:'';position:absolute;top:0;inset-inline-start:54px;inset-inline-end:0;height:.5px;background:var(--bd)}
+.row.tap{cursor:pointer}
+.row.tap:active{background:var(--fill)}
+.row-ic{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.row-ic.dg{background:var(--dg);color:#fff}
+.row-tx{flex:1;min-width:0}
+.row-t{font-size:14px;font-weight:600}
+.row-s{font-size:11px;color:var(--mut);line-height:1.7}
+.row-chev{font-size:20px;color:var(--mut)}
+.seg{display:flex;background:var(--fill);border-radius:10px;padding:2px;gap:2px;height:32px;flex-shrink:0}
+.seg button{flex:1;padding:0 10px;border-radius:8px;font-size:12px;color:var(--mut);white-space:nowrap;transition:.2s}
+.seg button.active{background:var(--ac);color:var(--on);font-weight:700}
+.seg.big{height:40px;border-radius:13px;padding:3px;width:100%;margin-bottom:12px}
+.seg.big button{font-size:14px;font-weight:600;border-radius:11px}
+.dots{display:flex;gap:10px}
+.dot{width:30px;height:30px;border-radius:50%;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;transition:.2s}
+.dot.modern{background:linear-gradient(135deg,#0F7B61,#C9A24B)}
+.dot.abi{background:linear-gradient(135deg,#2B6ED9,#7AB0FF)}
+.dot.active{border:2.5px solid var(--tx)}
+.switch{width:51px;height:31px;border-radius:16px;background:var(--fill);border:1px solid var(--bd);position:relative;transition:.25s;flex-shrink:0}
+.switch::after{content:'';position:absolute;top:2px;right:2px;width:25px;height:25px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .25s var(--ease)}
+.switch.on{background:var(--ac);border-color:var(--ac)}
+.switch.on::after{transform:translateX(-20px)}
+.set-foot{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--mut);padding:2px 4px 4px}
+.set-foot a{color:var(--ac);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:99px}
+.close-btn{width:100%;padding:14px;border-radius:16px;background:var(--fill);font-weight:600;font-size:15px;margin-top:8px}
+
+/* ---------- فهرست ---------- */
+.search{display:flex;align-items:center;gap:10px;background:var(--fill);border-radius:14px;padding:0 14px;height:44px;margin-bottom:12px;flex-shrink:0}
+.search .ic{color:var(--mut);font-size:20px}
+.search input{flex:1;min-width:0;border:0;background:none;outline:0;font-size:15px;-webkit-user-select:text;user-select:text}
+.tab-content{overflow-y:auto;flex:1;touch-action:pan-y;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+.grid-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--fill);border-radius:16px;cursor:pointer;transition:.2s;border:1.5px solid transparent;min-width:0}
+.grid-item:active{transform:scale(.95)}
+.grid-item.cur{background:color-mix(in srgb,var(--ac) 14%,transparent);border-color:var(--ac)}
+.grid-num{min-width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--ac2),var(--ac));color:var(--on);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.grid-txt{min-width:0}
+.grid-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grid-sub{font-size:10.5px;color:var(--mut)}
+.empty{text-align:center;color:var(--mut);padding:40px 20px;font-size:14px}
+.empty .ic{font-size:56px;opacity:.5;display:block;margin:0 auto 12px}
+.empty b{display:block;color:var(--tx);font-size:16px;margin-bottom:6px}
+.bm-item{display:flex;align-items:center;gap:12px;padding:8px 8px 8px 14px;background:var(--fill);border-radius:16px;margin-bottom:8px}
+.bm-main{flex:1;min-width:0;display:flex;align-items:center;gap:12px;cursor:pointer;text-align:start}
+.bm-main .ic{color:var(--ac2);font-size:22px}
+.bm-t{font-size:15px;font-weight:700}
+.bm-s{font-size:12px;color:var(--mut)}
+.bm-del{width:40px;height:40px;border-radius:50%;background:var(--fill);color:var(--dg);font-size:18px;display:flex;align-items:center;justify-content:center}
+
+/* ---------- برو به صفحه ---------- */
+.goto-input{width:100%;height:52px;border-radius:14px;background:var(--fill);border:1.5px solid transparent;outline:0;text-align:center;font-size:20px;font-weight:600;-webkit-user-select:text;user-select:text}
+.goto-input.err{border-color:var(--dg)}
+.goto-err{color:var(--dg);font-size:12px;text-align:center;min-height:18px;margin:6px 0}
+.btn-grad{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:50px;border-radius:16px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);font-size:16px;font-weight:700}
+
+/* ---------- دانلود ---------- */
+.guide-intro{background:var(--fill);border-radius:16px;padding:14px;font-size:13.5px;color:var(--mut);line-height:1.9}
+.download-status{display:none;background:var(--fill);color:var(--ac);padding:10px;border-radius:12px;font-size:13px;text-align:center;margin-top:10px}
+.download-status.visible{display:block}
+.install-section{margin-top:16px}
+.install-title{display:flex;align-items:center;gap:8px;font-weight:700;margin-bottom:10px}
+.guide-item{display:flex;gap:10px;font-size:13px;margin-bottom:10px;line-height:1.8}
+.guide-item .ic{font-size:18px;color:var(--ac);margin-top:4px}
+.install-btn{display:none;width:100%;padding:14px;border-radius:16px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);font-weight:700;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+.desc{color:var(--mut);font-size:13px;margin:16px 4px 8px}
+.dl-option{width:100%;padding:16px;border-radius:20px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);text-align:center;box-shadow:0 10px 26px -8px var(--ac)}
+.dl-main{font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
+.dl-main .ic{font-size:22px}
+.dl-sub{font-size:12px;opacity:.85;margin-top:2px}
+.dialog-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
+.dialog-card{position:relative;z-index:1;width:100%;max-width:300px;background:var(--sheet);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border:1px solid var(--bd);border-radius:24px;text-align:center;overflow:hidden;animation:pop .3s var(--ease);color:var(--tx)}
+.dialog-title{font-size:17px;font-weight:700;padding:20px 18px 6px}
+.dialog-message{font-size:13.5px;color:var(--mut);line-height:1.8;padding:0 18px 18px}
+.dialog-actions{display:flex;border-top:1px solid var(--bd)}
+.dialog-btn{flex:1;padding:14px;font-size:16px;font-weight:700;color:var(--ac)}
+.dialog-btn+.dialog-btn{border-inline-start:1px solid var(--bd)}
+.dialog-btn-cancel{font-weight:400;color:var(--mut)}
+
+/* ---------- صفحهٔ اصلی ---------- */
+.splash-overlay{align-items:center;z-index:2000;overflow-y:auto}
+.splash-overlay .overlay-backdrop{display:none}
+.splash-card{position:relative;width:100%;max-width:420px;margin:auto;padding:24px 28px calc(env(safe-area-inset-bottom,0px) + 110px);text-align:center;animation:rise .8s var(--ease)}
+.theme-top{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:12px;z-index:2100}
+.hero{position:relative;width:230px;height:230px;margin:0 auto 2px;display:flex;align-items:center;justify-content:center}
+.hero svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 90s linear infinite}
+.hero svg *{fill:none;stroke-width:1.2}
+.hero .s1{stroke:var(--ac2);stroke-opacity:.55}.hero .s2{stroke:var(--ac);stroke-opacity:.55}
+.hero .c1{stroke:var(--ac2);stroke-opacity:.3}.hero .c2{stroke:var(--ac);stroke-opacity:.18}
+.splash-logo{position:relative;width:108px;height:108px;border-radius:30px;box-shadow:0 14px 34px -8px var(--ac),0 0 0 1px var(--bd);animation:float 5.6s ease-in-out infinite}
+.splash-title{font-family:'Amiri',serif;font-size:50px;font-weight:700;line-height:1.5;background:linear-gradient(135deg,var(--ac2),var(--ac) 55%,var(--ac2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.splash-divider{display:flex;align-items:center;gap:12px;max-width:200px;margin:0 auto 10px;color:var(--ac2);font-size:12px}
+.splash-divider::before,.splash-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--ac2),transparent)}
+.splash-subtitle{color:var(--mut);font-size:15px;margin-bottom:34px}
+.cont-card{display:flex;align-items:center;gap:14px;width:100%;height:88px;padding:0 16px;border-radius:28px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--on);box-shadow:0 14px 30px -10px var(--ac);text-align:start;transition:transform .2s}
+.cont-card:active{transform:scale(.97)}
+.cont-ic,.cont-go{border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cont-ic{width:54px;height:54px;font-size:26px}
+.cont-go{width:38px;height:38px;font-size:22px}
+.cont-tx{flex:1;min-width:0}
+.cont-t{font-size:18px;font-weight:700}
+.cont-s{font-size:12.5px;opacity:.88;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:2100;background:var(--gl);backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border-top:.5px solid var(--bd);padding:0 6px env(safe-area-inset-bottom,0px);display:flex;justify-content:center}
+.tabbar-in{display:flex;width:100%;max-width:520px;height:58px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--mut);font-size:10.5px;font-weight:500;transition:transform .2s}
+.tab:active{transform:scale(.92)}
+.tab .tab-ic{width:54px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:21px}
+.tab.sel{color:var(--ac);font-weight:700}
+.tab.sel .tab-ic{background:color-mix(in srgb,var(--ac) 14%,transparent)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body class="theme-modern">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 4h16v2H4v-2zm0 4h16v2H4v-2zm0 4h10v2H4v-2z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+<symbol id="i-bm" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></symbol>
+<symbol id="i-bm0" viewBox="0 0 24 24"><path d="M17 3L7 3c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3L19 5c0-1.1-.9-2-2-2zM17 18l-5-2.18L7 18 7 5h10v13z"/></symbol>
+<symbol id="i-page" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.5.5 0 00.12-.61l-1.92-3.32a.5.5 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.5.5 0 00-.48-.41h-3.84a.5.5 0 00-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.5.5 0 00-.59.22L2.74 8.87a.5.5 0 00.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.5.5 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.57 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.5.5 0 00-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1112 8.4a3.6 3.6 0 010 7.2z"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></symbol>
+<symbol id="i-full" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></symbol>
+<symbol id="i-next" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></symbol>
+<symbol id="i-prev" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M6 19a2 2 0 002 2h8a2 2 0 002-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M17 1H7a2 2 0 00-2 2v18a2 2 0 002 2h10a2 2 0 002-2V3a2 2 0 00-2-2zm0 18H7V5h10v14z"/></symbol>
+<symbol id="i-desk" viewBox="0 0 24 24"><path d="M20 18a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></symbol>
+<symbol id="i-theme" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1 0 1.5-.8 1.5-1.5 0-.4-.2-.7-.4-1-.2-.3-.4-.6-.4-1 0-.8.7-1.5 1.5-1.5H16a5 5 0 005-5c0-4-4-8-9-8zM6.5 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3-4a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3 4a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM2 13h2v-2H2v2zm18 0h2v-2h-2v2zM11 2v2h2V2h-2zm0 18v2h2v-2h-2zM5.6 4.2L4.2 5.6l1.4 1.4 1.4-1.4-1.4-1.4zm12.8 12.8l-1.4 1.4 1.4 1.4 1.4-1.4-1.4-1.4zM18.4 7l1.4-1.4-1.4-1.4L17 5.6 18.4 7zM5.6 19.8L7 18.4 5.6 17l-1.4 1.4 1.4 1.4z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></symbol>
+<symbol id="i-translate" viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></symbol>
+</svg>
+
+<!-- ============ صفحهٔ اصلی ============ -->
+<div class="overlay splash-overlay active" id="splashOverlay" role="dialog" aria-modal="true">
+  <div class="overlay-backdrop"></div>
+  <button class="rbtn glass theme-top" id="btnThemeHome" aria-label="theme"><svg class="ic"><use id="homeThemeIc" href="#i-moon"/></svg></button>
+  <div class="splash-card">
+    <div class="hero">
+      <svg viewBox="0 0 230 230" aria-hidden="true">
+        <rect class="s1" x="43.5" y="43.5" width="143" height="143"/>
+        <rect class="s2" x="43.5" y="43.5" width="143" height="143" transform="rotate(45 115 115)"/>
+        <circle class="c1" cx="115" cy="115" r="106"/>
+        <circle class="c2" cx="115" cy="115" r="114"/>
+      </svg>
+      <img class="splash-logo" src="./icons/maskable_icon_x192.png" alt="">
+    </div>
+    <div class="splash-title">القرآن الكريم</div>
+    <div class="splash-divider">◆</div>
+    <div class="splash-subtitle" data-i18n="splashSubtitle"></div>
+    <button class="cont-card" id="splashContinue">
+      <span class="cont-ic"><svg class="ic"><use href="#i-book"/></svg></span>
+      <span class="cont-tx"><div class="cont-t" data-i18n="splashContinue"></div><div class="cont-s" id="contSub"></div></span>
+      <span class="cont-go"><svg class="ic"><use href="#i-prev"/></svg></span>
+    </button>
+  </div>
+  <nav class="tabbar">
+    <div class="tabbar-in">
+      <button class="tab sel" id="tbHome"><span class="tab-ic"><svg class="ic"><use href="#i-home"/></svg></span><span data-i18n="homeTab"></span></button>
+      <button class="tab" id="tbIndex"><span class="tab-ic"><svg class="ic"><use href="#i-list"/></svg></span><span data-i18n="idxShort"></span></button>
+      <button class="tab" id="tbBm"><span class="tab-ic"><svg class="ic"><use href="#i-bm0"/></svg></span><span data-i18n="bookmarks"></span></button>
+      <button class="tab" id="tbSet"><span class="tab-ic"><svg class="ic"><use href="#i-gear"/></svg></span><span data-i18n="settingsTitle"></span></button>
+    </div>
+  </nav>
+</div>
+
+<!-- ============ فهرست ============ -->
+<div class="overlay" id="juzOverlay" role="dialog" aria-modal="true">
+  <div class="overlay-backdrop"></div>
+  <div class="juz-card">
+    <div class="sheet-title"><svg class="ic"><use href="#i-book"/></svg><span data-i18n="menuTitle"></span></div>
+    <div class="seg big">
+      <button class="active" id="tabJuzBtn" data-i18n="tabJuz"></button>
+      <button id="tabSurahBtn" data-i18n="tabSurah"></button>
+    </div>
+    <div class="search" id="searchBox" style="display:none"><svg class="ic"><use href="#i-search"/></svg><input id="surahSearch" type="text" autocomplete="off" data-i18n-ph="searchSurah"></div>
+    <div class="tab-content" id="juzTabContent"><div class="grid" id="juzGrid"></div></div>
+    <div class="tab-content" id="surahTabContent" style="display:none"><div class="grid" id="surahGrid"></div></div>
+  </div>
+</div>
+
+<!-- ============ نشانه‌ها ============ -->
+<div class="overlay" id="bmOverlay" role="dialog" aria-modal="true">
+  <div class="overlay-backdrop"></div>
+  <div class="modal-card">
+    <div class="sheet-title"><svg class="ic" style="color:var(--ac2)"><use href="#i-bm"/></svg><span data-i18n="bookmarksTitle"></span></div>
+    <div id="bmList"></div>
+  </div>
+</div>
+
+<!-- ============ برو به صفحه ============ -->
+<div class="overlay" id="gotoOverlay" role="dialog" aria-modal="true">
+  <div class="overlay-backdrop"></div>
+  <div class="modal-card">
+    <div class="sheet-title center"><span data-i18n="goToPage"></span></div>
+    <input class="goto-input" id="gotoInput" type="text" inputmode="numeric" autocomplete="off" maxlength="3">
+    <div class="goto-err" id="gotoErr"></div>
+    <button class="btn-grad" id="gotoGo" data-i18n="go"></button>
+  </div>
+</div>
+
+<!-- ============ تنظیمات ============ -->
+<div class="overlay" id="settingsOverlay" role="dialog" aria-modal="true">
+  <div class="overlay-backdrop"></div>
+  <div class="modal-card">
+    <div class="sheet-title center"><span data-i18n="settingsTitle"></span></div>
+    <div class="grp">
+      <div class="row"><span class="row-ic"><svg class="ic"><use href="#i-theme"/></svg></span><span class="row-tx"><div class="row-t" data-i18n="themeLabel"></div></span>
+        <span class="dots"><button class="dot modern" id="themeModernBtn" aria-label="green"></button><button class="dot abi" id="themeAbiBtn" aria-label="blue"></button></span></div>
+      <div class="row"><span class="row-ic"><svg class="ic"><use href="#i-moon"/></svg></span><span class="row-tx"><div class="row-t" data-i18n="appearanceLabel"></div></span>
+        <span class="seg" style="width:176px"><button id="themeDayBtn" data-i18n="dayMode"></button><button id="themeNightBtn" data-i18n="nightMode"></button><button id="themeAutoBtn" data-i18n="autoMode"></button></span></div>
+      <div class="row tap" id="darkPagesRow" role="switch" tabindex="0"><span class="row-ic"><svg class="ic"><use href="#i-page"/></svg></span><span class="row-tx"><div class="row-t" data-i18n="darkPages"></div><div class="row-s" data-i18n="darkPagesDesc"></div></span>
+        <span class="switch" id="darkPagesSwitch"></span></div>
+    </div>
+    <div class="grp">
+      <div class="row"><span class="row-ic"><svg class="ic"><use href="#i-translate"/></svg></span><span class="row-tx"><div class="row-t" data-i18n="languageLabel"></div></span>
+        <span class="seg" style="width:150px"><button id="langFa">فارسی</button><button id="langAr">العربية</button></span></div>
+      <div class="row tap" id="rowDownload" role="button" tabindex="0"><span class="row-ic"><svg class="ic"><use href="#i-down"/></svg></span><span class="row-tx"><div class="row-t" data-i18n="downloadBtnTitle"></div><div class="row-s" data-i18n="hqSub"></div></span><svg class="ic row-chev"><use href="#i-chev"/></svg></div>
+      <div class="row tap" id="rowDelete" role="button" tabindex="0" style="display:none"><span class="row-ic dg"><svg class="ic"><use href="#i-trash"/></svg></span><span class="row-tx"><div class="row-t" style="color:var(--dg)" data-i18n="deleteBtn"></div></span></div>
+    </div>
+    <div class="set-foot"><span id="verTxt"></span><a href="https://t.me/YBAKHTIAR" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-send"/></svg><span data-i18n="splashLink"></span></a></div>
+    <button class="close-btn" id="settingsClose" data-i18n="closeBtn"></button>
+  </div>
+</div>
+
+<!-- ============ دانلود ============ -->
+<div class="overlay" id="downloadOverlay" role="dialog" aria-modal="true">
+  <div class="overlay-backdrop"></div>
+  <div class="modal-card">
+    <div class="sheet-title"><svg class="ic"><use href="#i-down"/></svg><span data-i18n="downloadTitle"></span></div>
+    <div class="guide-intro" data-i18n="offlineGuideIntro"></div>
+    <div class="download-status" id="downloadStatus"></div>
+    <div class="install-section">
+      <div class="install-title"><svg class="ic"><use href="#i-phone"/></svg><span data-i18n="installTitle"></span></div>
+      <div class="guide-item"><svg class="ic"><use href="#i-phone"/></svg><span data-i18n="guideAndroid"></span></div>
+      <div class="guide-item"><svg class="ic"><use href="#i-phone"/></svg><span data-i18n="guideIos"></span></div>
+      <div class="guide-item"><svg class="ic"><use href="#i-desk"/></svg><span data-i18n="guideDesktop"></span></div>
+      <button class="install-btn" id="installPwaBtn"><svg class="ic"><use href="#i-phone"/></svg><span data-i18n="installBtn"></span></button>
+    </div>
+    <p class="desc" data-i18n="downloadDesc"></p>
+    <button class="dl-option" id="dlHQ">
+      <div class="dl-main"><svg class="ic"><use href="#i-desk"/></svg><span data-i18n="hq"></span></div>
+      <div class="dl-sub" data-i18n="hqSub"></div>
+    </button>
+    <button class="close-btn" id="downloadClose" data-i18n="cancel"></button>
+  </div>
+</div>
+
+<!-- ============ نوارها ============ -->
+<header class="hdr glass" id="hdr">
+  <button class="chip" id="hdrJuz"></button>
+  <button class="chip" id="hdrSurah"></button>
+  <button class="rbtn" id="btnBm" aria-label="bookmark"><svg class="ic"><use id="bmIc" href="#i-bm0"/></svg></button>
+  <button class="rbtn" id="btnQuick" aria-label="theme"><svg class="ic"><use id="quickIc" href="#i-moon"/></svg></button>
+</header>
+<nav class="dock glass" id="dock">
+  <button class="dock-btn" id="btnMenu"><span class="dock-ic"><svg class="ic"><use href="#i-list"/></svg></span><span data-i18n="idxShort"></span></button>
+  <button class="dock-btn" id="btnBookmarks"><span class="dock-ic"><svg class="ic"><use href="#i-bm0"/></svg></span><span data-i18n="bookmarks"></span></button>
+  <button class="dock-btn" id="btnGoto"><span class="dock-ic"><svg class="ic"><use href="#i-page"/></svg></span><span data-i18n="goToPage"></span></button>
+  <button class="dock-btn" id="btnSettings"><span class="dock-ic"><svg class="ic"><use href="#i-gear"/></svg></span><span data-i18n="settingsTitle"></span></button>
+  <button class="dock-btn desk" id="btnFullscreen"><span class="dock-ic"><svg class="ic"><use href="#i-full"/></svg></span><span data-i18n="fullscreenTitle"></span></button>
+</nav>
+<div class="toast glass" id="toast" role="status" aria-live="polite"><svg class="ic"><use href="#i-bm"/></svg><span id="toastTx"></span></div>
+<div class="progress-pill glass" id="progressPill" role="status" aria-live="polite"></div>
+
+<!-- ============ کتاب ============ -->
+<div class="main-content" id="swipeArea">
+  <button class="nav-btn nav-right" id="navRight" data-i18n-t="prevTitle"><svg class="ic"><use href="#i-next"/></svg></button>
+  <div class="book-area" id="bookArea"><canvas id="book" role="img"></canvas></div>
+  <button class="nav-btn nav-left" id="navLeft" data-i18n-t="nextTitle"><svg class="ic"><use href="#i-prev"/></svg></button>
+</div>
+<script>
+// ================== CONFIG ==================
+const totalFiles = 611;
+const FIRST_FILE = 2;                                   // Quran001 جلد است و نمایش داده نمی‌شود؛ Quran002 = فاتحه
+const TOTAL = totalFiles - FIRST_FILE + 1;              // تعداد صفحه‌های قابل دانلود
+const TOLERANCE = 3;                                    // حداکثر صفحهٔ ناقص برای «کامل» حساب شدن
+const IMAGE_BASE = 'https://raw.githubusercontent.com/YaserBakhtiar/q/main/webp-image/';
+const LOCAL_BASE = './webp-image/';                     // اگر تصاویر کنار برنامه میزبانی شده باشند
+const IMAGE_CACHE_NAME = 'quran-cache-webp-v1';           // باید با sw.js یکی باشد
+const IMG_EXT = 'webp';
+const PAGE_OFFSET = 0;                                  // برای اینکه فاتحه «صفحهٔ ۱» شود 1 بگذارید
+const $ = id => document.getElementById(id);
+
+let currentFile = FIRST_FILE;
+let downloadStatus = 'none';                            // none | partial | complete
+let downloading = false;
+let deferredPrompt = null;
+const isStandalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+if ('serviceWorker' in navigator) {
+  addEventListener('load', () => navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(e => console.log('SW error', e)));
+}
+addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferredPrompt = e;
+  if (!isStandalone) $('installPwaBtn').style.display = 'flex';
+});
+
+// ================== TRANSLATIONS ==================
+const translations = {
+  fa: { idxShort: 'فهرست', homeTab: 'خانه', bookmarks: 'نشانه‌ها', surahWord: 'سوره ', pageWord: 'صفحه ',
+    splashSubtitle: 'به نرم‌افزار قرآن کریم خوش آمدید', splashContinue: 'ادامه مطالعه', splashLink: 'پیشنهادات و نظریات',
+    settingsTitle: 'تنظیمات', themeLabel: 'رنگ برنامه', languageLabel: 'زبان', appearanceLabel: 'حالت شب و روز', deleteBtn: 'حذف فایل‌های آفلاین', closeBtn: 'بستن',
+    darkPages: 'تاریک شدن صفحات مصحف', darkPagesDesc: 'در حالت شب، تصویر صفحات هم تیره شود. اگر خاموش باشد فقط محیط برنامه شب می‌شود.',
+    downloadTitle: 'راهنمای نصب و دانلود آفلاین', downloadDesc: 'برای مطالعهٔ آفلاین، فایل‌ها را دانلود کنید:', hq: 'دانلود آفلاین (۲۶۵ مگابایت)', hqSub: 'کیفیت بالا', cancel: 'لغو', ok: 'باشه',
+    confirmDeleteTitle: 'تأیید', confirmDeleteMsg: 'تمام فایل‌های دانلود شده حذف می‌شوند. ادامه می‌دهید؟',
+    confirmDownloadTitle: 'دانلود آفلاین', confirmDownloadMsg: 'فایل‌های آفلاین حدود ۲۶۵ مگابایت حجم دارد. ادامه می‌دهید؟',
+    confirmResumeTitle: 'ادامه دانلود', confirmResumeMsg: 'شما قبلاً {count} صفحه را دانلود کرده‌اید. ادامه دانلود از همان‌جا؟',
+    noSpaceMsg: 'فضای خالی دستگاه برای دانلود (حدود ۲۶۵ مگابایت) کافی نیست.',
+    partialMsg: '{count} صفحه دانلود نشد. اینترنت خود را بررسی کنید و دوباره تلاش کنید.', partialStatus: 'دانلود ناقص: {count} از {total}',
+    tabJuz: 'اجزاء', tabSurah: 'سوره‌ها', juz: 'جزء ', menuTitle: 'فهرست اجزاء و سوره‌ها', downloadBtnTitle: 'دانلود آفلاین', fullscreenTitle: 'تمام صفحه', prevTitle: 'صفحه قبل', nextTitle: 'صفحه بعد',
+    dayMode: 'روز', nightMode: 'شب', autoMode: 'خودکار',
+    searchSurah: 'جستجوی نام یا شمارهٔ سوره…', noResults: 'نتیجه‌ای پیدا نشد',
+    bookmarksTitle: 'نشانه‌های من', noBookmarks: 'هنوز نشانه‌ای ندارید', noBookmarksDesc: 'هنگام مطالعه، روی آیکون نشانه در بالای صفحه بزنید تا صفحه ذخیره شود.',
+    bookmarkAdded: 'نشانه اضافه شد', bookmarkRemoved: 'نشانه حذف شد', goToPage: 'برو به صفحه', go: 'برو', invalidPage: 'شمارهٔ صفحه معتبر نیست', goHint: 'شمارهٔ صفحه ({min} تا {max})',
+    downloadSuccess: 'دانلود با موفقیت انجام شد!', deleteSuccess: 'فایل‌های آفلاین حذف شدند.', downloadError: 'خطا در دانلود! لطفاً دوباره تلاش کنید.', deleteError: 'خطا در حذف!',
+    installTitle: 'راهنمای نصب', installBtn: 'نصب اپلیکیشن',
+    guideAndroid: 'اندروید: روی دکمه نصب اپلیکیشن کلیک نمایید یا از منوی مرورگر «افزودن به صفحه اصلی» را انتخاب کنید',
+    guideIos: 'آیفون/آیپد: گزینه Share را بزنید بعد گزینه Add to Home Screen.',
+    guideDesktop: 'دسکتاپ: روی دکمه نصب اپلیکیشن یا روی آیکون نصب در نوار آدرس کلیک نمایید',
+    offlineGuideIntro: 'برای استفاده آفلاین از برنامه، ابتدا آن را نصب کرده و به صفحه اصلی اضافه کنید. سپس از طریق صفحه اصلی برنامه را باز کرده و فایل‌های آفلاین را دانلود نمایید. پس از آن می‌توانید در مراحل بعدی بدون نیاز به اینترنت از قرآن استفاده کنید.',
+    downloading: 'در حال دانلود...', progress: 'پیشرفت: {current} از {total}', version: 'نسخه'
+  },
+  ar: { idxShort: 'الفهرس', homeTab: 'الرئيسية', bookmarks: 'العلامات', surahWord: 'سورة ', pageWord: 'صفحة ',
+    splashSubtitle: 'مرحباً بكم في تطبيق القرآن الكريم', splashContinue: 'متابعة القراءة', splashLink: 'اقتراحات وملاحظات',
+    settingsTitle: 'الإعدادات', themeLabel: 'لون التطبيق', languageLabel: 'اللغة', appearanceLabel: 'الوضع الليلي والنهاري', deleteBtn: 'حذف الملفات المحفوظة', closeBtn: 'إغلاق',
+    darkPages: 'تعتيم صفحات المصحف', darkPagesDesc: 'في الوضع الليلي تُعتَّم صور الصفحات أيضاً. عند الإيقاف يتغير مظهر التطبيق فقط.',
+    downloadTitle: 'دليل التثبيت والتنزيل دون اتصال', downloadDesc: 'نزّل الملفات للقراءة دون اتصال:', hq: 'تنزيل دون اتصال (٢٦٥ م.ب)', hqSub: 'جودة عالية', cancel: 'إلغاء', ok: 'موافق',
+    confirmDeleteTitle: 'تأكيد', confirmDeleteMsg: 'سيتم حذف جميع الملفات التي تم تنزيلها. هل تريد المتابعة؟',
+    confirmDownloadTitle: 'تنزيل للاستخدام دون اتصال', confirmDownloadMsg: 'حجم الملفات حوالي ٢٦٥ م.ب. هل تريد المتابعة؟',
+    confirmResumeTitle: 'متابعة التنزيل', confirmResumeMsg: 'لقد نزّلت {count} صفحة بالفعل. متابعة من حيث توقفت؟',
+    noSpaceMsg: 'المساحة المتاحة على الجهاز غير كافية (حوالي ٢٦٥ م.ب).',
+    partialMsg: 'تعذّر تنزيل {count} صفحة. تحقق من الاتصال وحاول مرة أخرى.', partialStatus: 'تنزيل غير مكتمل: {count} من {total}',
+    tabJuz: 'الأجزاء', tabSurah: 'السور', juz: 'الجزء ', menuTitle: 'قائمة الأجزاء والسور', downloadBtnTitle: 'تحميل دون اتصال', fullscreenTitle: 'ملء الشاشة', prevTitle: 'الصفحة السابقة', nextTitle: 'الصفحة التالية',
+    dayMode: 'النهار', nightMode: 'الليل', autoMode: 'تلقائي',
+    searchSurah: 'ابحث عن اسم السورة أو رقمها…', noResults: 'لا توجد نتائج',
+    bookmarksTitle: 'علاماتي', noBookmarks: 'لا توجد علامات بعد', noBookmarksDesc: 'أثناء القراءة اضغط على أيقونة العلامة في أعلى الصفحة لحفظها.',
+    bookmarkAdded: 'تمت إضافة العلامة', bookmarkRemoved: 'تم حذف العلامة', goToPage: 'اذهب إلى صفحة', go: 'اذهب', invalidPage: 'رقم الصفحة غير صالح', goHint: 'رقم الصفحة ({min} إلى {max})',
+    downloadSuccess: 'تم التحميل بنجاح!', deleteSuccess: 'تم حذف الملفات غير المتصلة.', downloadError: 'خطأ في التحميل! حاول مرة أخرى.', deleteError: 'خطأ في الحذف!',
+    installTitle: 'دليل التثبيت', installBtn: 'تثبيت التطبيق',
+    guideAndroid: 'أندرويد: انقر على زر تثبيت التطبيق أو اختر "إضافة إلى الشاشة الرئيسية" من قائمة المتصفح',
+    guideIos: 'آيفون/آيباد: اضغط على زر المشاركة ثم اختر "Add to Home Screen".',
+    guideDesktop: 'سطح المكتب: انقر على زر تثبيت التطبيق أو على أيقونة التثبيت في شريط العنوان',
+    offlineGuideIntro: 'لاستخدام التطبيق دون اتصال، قم أولاً بتثبيته وإضافته إلى الشاشة الرئيسية. ثم افتح التطبيق من الشاشة الرئيسية وقم بتنزيل الملفات غير المتصلة بالإنترنت. بعد ذلك يمكنك استخدام القرآن في المرات اللاحقة بدون الحاجة إلى الإنترنت.',
+    downloading: 'جاري التحميل...', progress: 'التقدم: {current} من {total}', version: 'الإصدار'
+  }
+};
+
+let currentLang = localStorage.getItem('quran-language') === 'ar' ? 'ar' : 'fa';
+let themeStyle = localStorage.getItem('quran-theme-style');
+if (!['abi', 'modern'].includes(themeStyle)) themeStyle = 'modern';          // تم زرد حذف شد
+let themeMode = localStorage.getItem('quran-theme-mode');
+if (!['day', 'night', 'auto'].includes(themeMode)) themeMode = 'auto';
+let darkPages = localStorage.getItem('quran-dark-pages') !== '0';             // صفحات هم در حالت شب تاریک شوند
+const nightMQ = matchMedia('(prefers-color-scheme: dark)');
+const isNight = () => themeMode === 'night' || (themeMode === 'auto' && nightMQ.matches);
+const darkNow = () => isNight() && darkPages;
+
+const T = () => translations[currentLang];
+const fmt = n => String(n).replace(/\d/g, d => (currentLang === 'fa' ? '۰۱۲۳۴۵۶۷۸۹' : '٠١٢٣٤٥٦٧٨٩')[d]);
+const pageNo = f => fmt(f - PAGE_OFFSET);
+
+
+const juzOrdinals = {
+  fa: ['اول','دوم','سوم','چهارم','پنجم','ششم','هفتم','هشتم','نهم','دهم','یازدهم','دوازدهم','سیزدهم','چهاردهم','پانزدهم','شانزدهم','هفدهم','هجدهم','نوزدهم','بیستم','بیست‌و‌یکم','بیست‌و‌دوم','بیست‌و‌سوم','بیست‌و‌چهارم','بیست‌و‌پنجم','بیست‌و‌ششم','بیست‌و‌هفتم','بیست‌و‌هشتم','بیست‌و‌نهم','سی‌ام'],
+  ar: ['الأول','الثاني','الثالث','الرابع','الخامس','السادس','السابع','الثامن','التاسع','العاشر','الحادي عشر','الثاني عشر','الثالث عشر','الرابع عشر','الخامس عشر','السادس عشر','السابع عشر','الثامن عشر','التاسع عشر','العشرون','الحادي والعشرون','الثاني والعشرون','الثالث والعشرون','الرابع والعشرون','الخامس والعشرون','السادس والعشرون','السابع والعشرون','الثامن والعشرون','التاسع والعشرون','الثلاثون']
+};
+
+const surahPages = [1,2,50,77,106,128,151,177,187,208,221,235,249,255,262,267,282,293,305,312,322,331,342,350,359,366,376,385,396,404,411,415,418,428,434,440,445,452,458,467,477,483,489,495,498,502,506,511,515,518,520,523,526,528,531,534,537,542,545,549,551,553,554,556,558,560,562,564,567,569,571,573,576,578,580,582,584,586,587,589,590,591,592,594,595,596,597,597,598,600,600,601,602,602,603,603,604,604,605,605,606,606,607,607,607,608,608,608,609,609,609,610,610,610];
+const surahNames = {
+  ar: ["الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم","لقمان","السجدة","الأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر","فصلت","الشورى","الزخرف","الدخان","الجاثية","الأحقاف","محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"],
+  fa: ["فاتحه","بقره","آل‌عمران","نساء","مائده","انعام","اعراف","انفال","توبه","یونس","هود","یوسف","رعد","ابراهیم","حجر","نحل","اسراء","کهف","مریم","طه","انبیاء","حج","مؤمنون","نور","فرقان","شعراء","نمل","قصص","عنکبوت","روم","لقمان","سجده","احزاب","سبأ","فاطر","یس","صافات","ص","زمر","غافر","فصلت","شوری","زخرف","دخان","جاثیه","احقاف","محمد","فتح","حجرات","ق","ذاریات","طور","نجم","قمر","الرحمن","واقعه","حدید","مجادله","حشر","ممتحنه","صف","جمعه","منافقون","تغابن","طلاق","تحریم","ملک","قلم","حاقه","معارج","نوح","جن","مزمل","مدثر","قیامت","انسان","مرسلات","نبأ","نازعات","عبس","تکویر","انفطار","مطففین","انشقاق","بروج","طارق","اعلی","غاشیه","فجر","بلد","شمس","لیل","ضحی","شرح","تین","علق","قدر","بینه","زلزله","عادیات","قارعه","تکاثر","عصر","همزه","فیل","قریش","ماعون","کوثر","کافرون","نصر","مسد","اخلاص","فلق","ناس"]
+};
+
+
+// ================== i18n ==================
+function applyTranslations() {
+  const t = T();
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll('[data-i18n-t]').forEach(el => { const v = t[el.dataset.i18nT]; el.title = v; el.setAttribute('aria-label', v); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t[el.dataset.i18nPh]; });
+  const v = $('verTxt'); if (v) v.textContent = t.version + ' ' + fmt('2.0');
+}
+function setLanguage(lang) {
+  currentLang = lang;
+  document.body.classList.toggle('lang-ar', lang === 'ar');
+  document.documentElement.lang = lang;
+  localStorage.setItem('quran-language', lang);
+  applyTranslations();
+  $('langFa').classList.toggle('active', lang === 'fa');
+  $('langAr').classList.toggle('active', lang === 'ar');
+  updateStatusUI(); updateChrome();
+}
+
+// ================== Dialogs / overlays ==================
+function dialog(message, title, cancelable) {
+  return new Promise(resolve => {
+    const o = document.createElement('div');
+    o.className = 'dialog-overlay'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-modal', 'true');
+    o.innerHTML = '<div class="overlay-backdrop"></div><div class="dialog-card"><div class="dialog-title"></div><div class="dialog-message"></div><div class="dialog-actions"></div></div>';
+    o.querySelector('.dialog-title').textContent = title;
+    o.querySelector('.dialog-message').textContent = message;
+    const actions = o.querySelector('.dialog-actions');
+    const done = v => { o.remove(); resolve(v); };
+    const add = (cls, text, v) => { const b = document.createElement('button'); b.className = 'dialog-btn ' + cls; b.textContent = text; b.onclick = () => done(v); actions.appendChild(b); };
+    if (cancelable) add('dialog-btn-cancel', T().cancel, false);
+    add('dialog-btn-ok', T().ok, true);
+    o.querySelector('.overlay-backdrop').onclick = () => done(false);
+    document.body.appendChild(o);
+  });
+}
+const OVERLAYS = ['juzOverlay', 'bmOverlay', 'gotoOverlay', 'settingsOverlay', 'downloadOverlay'];
+function openOverlay(id) {
+  $(id).classList.add('active');
+  if (id === 'downloadOverlay') updateStatusUI();
+  if (id === 'juzOverlay') refreshIndex();
+  if (id === 'bmOverlay') buildBookmarks();
+  if (id === 'gotoOverlay') openGoto();
+}
+function closeOverlay(id) { $(id).classList.remove('active'); }
+function closeAllOverlays() { OVERLAYS.forEach(closeOverlay); }
+function closeActiveOverlay() {
+  const id = OVERLAYS.find(i => $(i).classList.contains('active'));
+  if (id) closeOverlay(id);
+  return !!id;
+}
+function closeSplash() { $('splashOverlay').classList.remove('active'); }
+let toastT;
+function toast(msg) {
+  $('toastTx').textContent = msg;
+  const t = $('toast'); t.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 1600);
+}
+
+// ================== Theme ==================
+const THEME_COLORS = { modern: ['#EDF3EF', '#06100D'], abi: ['#EAF2FC', '#070D1B'] };
+function applyTheme() {
+  const b = document.body, night = isNight();
+  b.classList.remove('theme-abi', 'theme-modern', 'night-mode');
+  b.classList.add('theme-' + themeStyle);
+  if (night) b.classList.add('night-mode');
+  const c = THEME_COLORS[themeStyle][night ? 1 : 0];
+  $('theme-color-meta').setAttribute('content', c);
+  document.documentElement.style.backgroundColor = c;
+  $('themeModernBtn').classList.toggle('active', themeStyle === 'modern');
+  $('themeAbiBtn').classList.toggle('active', themeStyle === 'abi');
+  $('themeModernBtn').innerHTML = themeStyle === 'modern' ? '<svg class="ic"><use href="#i-check"/></svg>' : '';
+  $('themeAbiBtn').innerHTML = themeStyle === 'abi' ? '<svg class="ic"><use href="#i-check"/></svg>' : '';
+  const ic = night ? '#i-sun' : '#i-moon';
+  $('quickIc').setAttribute('href', ic); $('homeThemeIc').setAttribute('href', ic);
+  ['Day', 'Night', 'Auto'].forEach(m => $('theme' + m + 'Btn').classList.toggle('active', themeMode === m.toLowerCase()));
+  $('darkPagesSwitch').classList.toggle('on', darkPages);
+  $('darkPagesRow').setAttribute('aria-checked', String(darkPages));
+  if (typeof render === 'function') render();                 // رنگ کاغذ و صفحات تاریک
+}
+function setThemeStyle(s) { themeStyle = s; localStorage.setItem('quran-theme-style', s); applyTheme(); }
+function setThemeMode(m) { themeMode = m; localStorage.setItem('quran-theme-mode', m); applyTheme(); }
+function toggleQuick() { setThemeMode(isNight() ? 'day' : 'night'); }
+function setDarkPages(v) { darkPages = v; localStorage.setItem('quran-dark-pages', v ? '1' : '0'); applyTheme(); }
+nightMQ.addEventListener && nightMQ.addEventListener('change', () => { if (themeMode === 'auto') applyTheme(); });
+
+// ================== Pages: textures ==================
+const fileName = n => 'Quran' + String(n).padStart(3, '0') + '.' + IMG_EXT;
+let pageRatio = 1747 / 2497;
+const texCache = new Map();      // key -> canvas
+const pending = new Map();
+const failedUntil = new Map();
+const TEX_LIMIT = 18;
+const texKey = (f, dark) => f + (dark ? 'd' : 'l');
+
+async function fetchBlob(file) {
+  const name = fileName(file);
+  try {
+    const cache = await caches.open(IMAGE_CACHE_NAME);
+    const hit = await cache.match('images/' + name);
+    if (hit) return await hit.blob();
+  } catch (e) { /* ادامه با شبکه */ }
+  for (const base of [IMAGE_BASE, LOCAL_BASE]) {
+    try {
+      const r = await fetch(base + name, { mode: 'cors' });
+      if (r.ok) return await r.blob();
+    } catch (e) {}
+  }
+  throw new Error('page load failed ' + file);
+}
+async function decodeBitmap(blob) {
+  if (window.createImageBitmap) { try { return await createImageBitmap(blob); } catch (e) {} }
+  return await new Promise((res, rej) => {
+    const u = URL.createObjectURL(blob), im = new Image();
+    im.onload = () => { URL.revokeObjectURL(u); res(im); };
+    im.onerror = () => { URL.revokeObjectURL(u); rej(new Error('decode')); };
+    im.src = u;
+  });
+}
+// معادل CSS: invert(.9) brightness(1.1) contrast(1.05) hue-rotate(180deg)
+function applyNight(cv) {
+  const ctx = cv.getContext('2d');
+  const id = ctx.getImageData(0, 0, cv.width, cv.height), d = id.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const r = d[i], g = d[i + 1], b = d[i + 2];
+    d[i]     = 0.5304 * r - 1.3213 * g - 0.1331 * b + 258.6975;
+    d[i + 1] = -0.3936 * r - 0.3973 * g - 0.1331 * b + 258.6975;
+    d[i + 2] = -0.3936 * r - 1.3213 * g + 0.7909 * b + 258.6975;
+  }
+  ctx.putImageData(id, 0, 0);
+}
+async function buildTex(file, dark) {
+  const light = texCache.get(texKey(file, false));
+  let cv;
+  if (dark && light) {
+    cv = document.createElement('canvas'); cv.width = light.width; cv.height = light.height;
+    cv.getContext('2d').drawImage(light, 0, 0);
+  } else {
+    const bmp = await decodeBitmap(await fetchBlob(file));
+    const nw = bmp.width, nh = bmp.height;
+    if (Math.abs(nw / nh - pageRatio) > 0.01) { pageRatio = nw / nh; setTimeout(layout, 0); }
+    const want = Math.ceil(Math.max(1, L.pw) * Math.max(1, L.dpr) * 1.6);
+    const tw = Math.min(nw, Math.max(400, want)), th = Math.round(tw * nh / nw);
+    cv = document.createElement('canvas'); cv.width = tw; cv.height = th;
+    const c = cv.getContext('2d'); c.imageSmoothingQuality = 'high';
+    c.drawImage(bmp, 0, 0, tw, th);
+    if (bmp.close) bmp.close();
+  }
+  if (dark) applyNight(cv);
+  return cv;
+}
+function trimCache() {
+  while (texCache.size > TEX_LIMIT) texCache.delete(texCache.keys().next().value);
+}
+function ensureTex(file, dark) {
+  const k = texKey(file, dark);
+  if (pending.has(k) || texCache.has(k)) return;
+  if ((failedUntil.get(k) || 0) > Date.now()) return;
+  pending.set(k, 1);
+  buildTex(file, dark).then(cv => { texCache.set(k, cv); trimCache(); })
+    .catch(() => failedUntil.set(k, Date.now() + 5000))
+    .finally(() => { pending.delete(k); scheduleRender(); });
+}
+function getTex(file) {
+  if (file < FIRST_FILE || file > totalFiles) return null;
+  const dark = darkNow(), k = texKey(file, dark), t = texCache.get(k);
+  if (t) { texCache.delete(k); texCache.set(k, t); return t; }
+  ensureTex(file, dark);
+  return null;
+}
+function prefetchAround() {
+  const dark = darkNow(), st = step();
+  for (let k = -2; k <= 3; k++) {
+    const f = currentFile + k * st;
+    [f, spread ? f + 1 : null].forEach(x => { if (x && x >= FIRST_FILE && x <= totalFiles) ensureTex(x, dark); });
+  }
+}
+
+// ================== Book renderer (Page Curl روی Canvas) ==================
+//  C = نقطهٔ گرفته‌شده روی لبهٔ برگه (0, cy)   P = جای انگشت (px, py)
+//  خط تا = عمودمنصف C و P؛ بخش نزدیک C بلند می‌شود و روی خط تا برمی‌گردد (پشت برگه).
+//  حالت دوصفحه: برگه همان صفحهٔ چپ است و روی شیرازه (x = pw) به صفحهٔ راست می‌افتد.
+function polyClip(poly, mx, my, nx, ny, sign) {
+  const out = [], n = poly.length;
+  for (let i = 0; i < n; i++) {
+    const a = poly[i], b = poly[(i + 1) % n];
+    const da = sign * ((a[0] - mx) * nx + (a[1] - my) * ny);
+    const db = sign * ((b[0] - mx) * nx + (b[1] - my) * ny);
+    if (da >= 0) out.push(a);
+    if ((da >= 0) !== (db >= 0)) { const t = da / (da - db); out.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]); }
+  }
+  return out;
+}
+function clipRect(poly, w, h) {
+  let r = polyClip(poly, 0, 0, 1, 0, 1);
+  r = polyClip(r, w, 0, -1, 0, 1);
+  r = polyClip(r, 0, 0, 0, 1, 1);
+  return polyClip(r, 0, h, 0, -1, 1);
+}
+function pathOf(c, poly) {
+  c.beginPath(); c.moveTo(poly[0][0], poly[0][1]);
+  for (let i = 1; i < poly.length; i++) c.lineTo(poly[i][0], poly[i][1]);
+  c.closePath();
+}
+function drawBook(c, pw, h, isSpread, S) {
+  const tw = isSpread ? pw * 2 : pw, paper = S.dark ? '#171717' : '#fff';
+  const page = (tex, l, r) => {
+    if (tex) c.drawImage(tex, l, 0, r - l, h); else { c.fillStyle = paper; c.fillRect(l, 0, r - l, h); }
+  };
+  // ناودان مصحف باز: دو صفحه به‌سمت شیرازه ملایم تیره می‌شوند + خط ظریف وسط
+  const gutter = () => {
+    if (!isSpread) return;
+    const g = pw * 0.11;
+    const a = c.createLinearGradient(pw - g, 0, pw, 0);
+    a.addColorStop(0, 'rgba(0,0,0,0)'); a.addColorStop(.55, 'rgba(0,0,0,.05)'); a.addColorStop(1, 'rgba(0,0,0,.20)');
+    c.fillStyle = a; c.fillRect(pw - g, 0, g, h);
+    const b = c.createLinearGradient(pw, 0, pw + g * .9, 0);
+    b.addColorStop(0, 'rgba(0,0,0,.20)'); b.addColorStop(.45, 'rgba(0,0,0,.05)'); b.addColorStop(1, 'rgba(0,0,0,0)');
+    c.fillStyle = b; c.fillRect(pw, 0, g * .9, h);
+    c.fillStyle = 'rgba(0,0,0,.16)'; c.fillRect(pw - .5, 0, 1, h);
+  };
+  const idle = () => { page(S.front, 0, pw); if (isSpread) page(S.underR, pw, tw); gutter(); };
+
+  const dx = S.px, dy = S.py - S.cy, dist = Math.hypot(dx, dy);
+  if (!S.curling || dist < 1.5) return idle();
+
+  const u = pw / 360, nx = dx / dist, ny = dy / dist, mx = S.px / 2, my = (S.cy + S.py) / 2;
+  // وقتی برگه تقریباً کامل خوابید، سایه‌ها محو می‌شوند (بدون پرش در پایان)
+  const fade = 1 - Math.min(1, Math.max(0, mx / pw - 0.72) / 0.28);
+  const rect = [[0, 0], [pw, 0], [pw, h], [0, h]];
+  const lifted = polyClip(rect, mx, my, nx, ny, -1);
+  if (lifted.length < 3) return idle();
+  const flat = polyClip(rect, mx, my, nx, ny, 1);
+  const hasFlat = flat.length >= 3;
+
+  // ۱) صفحه‌های زیرین + سایهٔ برگهٔ بلندشده
+  page(S.underL, 0, pw);
+  if (isSpread) page(S.underR, pw, tw);
+  c.save(); pathOf(c, lifted); c.clip();
+  let gr = c.createLinearGradient(mx, my, mx - nx * 90 * u, my - ny * 90 * u);
+  gr.addColorStop(0, 'rgba(0,0,0,' + (0.40 * fade) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+  c.fillStyle = gr; c.fillRect(0, 0, pw, h); c.restore();
+
+  // ۲) بخش صافِ باقی‌ماندهٔ برگه
+  if (hasFlat) { c.save(); pathOf(c, flat); c.clip(); page(S.front, 0, pw); c.restore(); }
+
+  // ۳) پشت برگه = بازتاب بخش بلندشده نسبت به خط تا
+  const k = 2 * (mx * nx + my * ny);
+  const refl = lifted.map(p => { const d = (p[0] - mx) * nx + (p[1] - my) * ny; return [p[0] - 2 * d * nx, p[1] - 2 * d * ny]; });
+  const back = clipRect(refl, tw, h);
+  if (back.length >= 3) {
+    c.strokeStyle = 'rgba(0,0,0,' + (0.13 * fade) + ')'; c.lineWidth = 14 * u; c.lineJoin = 'round';
+    if (hasFlat) { c.save(); pathOf(c, flat); c.clip(); pathOf(c, back); c.stroke(); c.restore(); }
+    if (isSpread) { c.save(); c.beginPath(); c.rect(pw, 0, pw, h); c.clip(); pathOf(c, back); c.stroke(); c.restore(); }
+
+    c.save(); pathOf(c, back); c.clip();
+    const A = 1 - 2 * nx * nx, B = -2 * nx * ny, D = 1 - 2 * ny * ny;
+    if (isSpread && S.back) {
+      // پشت واقعی برگه: صفحهٔ راستِ بعدی (آینه‌ای نسبت به رو)
+      c.save(); c.transform(A, B, B, D, k * nx, k * ny); c.transform(-1, 0, 0, 1, pw, 0);
+      c.drawImage(S.back, 0, 0, pw, h); c.restore();
+    } else {
+      // تک‌صفحه: شبح کم‌رنگ روی کاغذ
+      c.save(); c.transform(A, B, B, D, k * nx, k * ny); page(S.front, 0, pw); c.restore();
+      c.fillStyle = S.dark ? 'rgba(23,23,23,.78)' : 'rgba(255,255,255,.78)'; c.fillRect(0, 0, tw, h);
+    }
+    gr = c.createLinearGradient(mx, my, mx + nx * 120 * u, my + ny * 120 * u);
+    gr.addColorStop(0, 'rgba(0,0,0,' + (0.44 * fade) + ')'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    c.fillStyle = gr; c.fillRect(0, 0, tw, h);
+    c.restore();
+  }
+  gutter();
+}
+
+// ================== Layout & render ==================
+const cvs = $('book'), ctx = cvs.getContext('2d');
+let spread = false;
+let L = { pw: 0, ph: 0, cw: 0, dpr: 1 };
+let curl = { dir: 0, cy: 0, px: 0, py: 0 };
+let busy = false, rafId = 0;
+const step = () => spread ? 2 : 1;
+const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
+const pairOf = f => spread ? { R: f, L: f + 1 } : { R: null, L: f };
+const canTurn = dir => dir > 0 ? currentFile + step() <= totalFiles : currentFile - step() >= FIRST_FILE;
+function alignFile() {
+  currentFile = clamp(currentFile, FIRST_FILE, totalFiles);
+  if (spread && currentFile % 2 !== 0) currentFile--;      // صفحهٔ راست همیشه زوج است
+  if (currentFile < FIRST_FILE) currentFile = FIRST_FILE;
+}
+function scheduleRender() { if (!rafId) rafId = requestAnimationFrame(() => { rafId = 0; render(); }); }
+function render() {
+  if (!L.pw) return;
+  const st = step(), cur = pairOf(currentFile), nx = pairOf(currentFile + st), pv = pairOf(currentFile - st);
+  const S = { cy: curl.cy, px: curl.px, py: curl.py, curling: curl.dir !== 0, dark: darkNow() };
+  if (curl.dir === 1) {
+    S.front = getTex(cur.L); S.back = spread ? getTex(nx.R) : null; S.underL = getTex(nx.L); S.underR = spread ? getTex(cur.R) : null;
+  } else if (curl.dir === -1) {
+    S.front = getTex(pv.L); S.back = spread ? getTex(cur.R) : null; S.underL = getTex(cur.L); S.underR = spread ? getTex(pv.R) : null;
+  } else { S.front = getTex(cur.L); S.underR = spread ? getTex(cur.R) : null; }
+  ctx.setTransform(L.dpr, 0, 0, L.dpr, 0, 0);
+  ctx.clearRect(0, 0, L.cw, L.ph);
+  drawBook(ctx, L.pw, L.ph, spread, S);
+}
+function layout() {
+  const r = $('bookArea').getBoundingClientRect();
+  if (r.width < 10 || r.height < 10) return;
+  const wantSpread = innerWidth >= 700 && innerWidth > innerHeight;
+  if (wantSpread !== spread) { spread = wantSpread; alignFile(); texCache.clear(); curl.dir = 0; }
+  let pw = Math.min(spread ? r.width / 2 : r.width, r.height * pageRatio);
+  pw = Math.max(40, Math.floor(pw));
+  const ph = Math.floor(pw / pageRatio), cw = spread ? pw * 2 : pw;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  cvs.style.width = cw + 'px'; cvs.style.height = ph + 'px';
+  const bw = Math.round(cw * dpr), bh = Math.round(ph * dpr);
+  if (cvs.width !== bw || cvs.height !== bh) { cvs.width = bw; cvs.height = bh; }
+  cvs.classList.toggle('spread', spread);
+  L = { pw, ph, cw, dpr };
+  render(); updateChrome();
+}
+new ResizeObserver(() => layout()).observe($('bookArea'));
+addEventListener('orientationchange', () => setTimeout(layout, 120));
+
+// ================== Chrome (نوار بالا، نشانه‌ها) ==================
+let bookmarks = [];
+try { bookmarks = (JSON.parse(localStorage.getItem('quran-bookmarks') || '[]') || []).filter(b => b && b.f >= FIRST_FILE && b.f <= totalFiles); } catch (e) {}
+const saveBm = () => { try { localStorage.setItem('quran-bookmarks', JSON.stringify(bookmarks)); } catch (e) {} };
+const isBm = f => bookmarks.some(b => b.f === f);
+const surahOf = file => { const p = file - 1; let s = 0; for (let i = 0; i < 114; i++) if (surahPages[i] <= p) s = i; return s; };
+const juzOf = file => file >= 587 ? 30 : Math.min(29, Math.max(1, Math.floor((file - 3) / 20) + 1));
+
+function updateChrome() {
+  const t = T(), last = spread ? currentFile + 1 : currentFile;
+  const surah = surahNames[currentLang][surahOf(last)];
+  $('hdrJuz').textContent = t.juz + fmt(juzOf(last));
+  $('hdrSurah').textContent = t.surahWord + surah;
+  $('contSub').textContent = t.surahWord + surahNames[currentLang][surahOf(currentFile)] + '  ·  ' + t.pageWord + pageNo(currentFile);
+  const on = isBm(currentFile);
+  $('bmIc').setAttribute('href', on ? '#i-bm' : '#i-bm0');
+  $('btnBm').classList.toggle('on', on);
+}
+function toggleBookmark() {
+  const t = T(), f = currentFile;
+  if (isBm(f)) { bookmarks = bookmarks.filter(b => b.f !== f); toast(t.bookmarkRemoved); }
+  else { bookmarks.unshift({ f, t: Date.now() }); toast(t.bookmarkAdded); }
+  saveBm(); updateChrome();
+}
+function buildBookmarks() {
+  const t = T(), box = $('bmList'); box.textContent = '';
+  if (!bookmarks.length) {
+    const e = document.createElement('div'); e.className = 'empty';
+    e.innerHTML = '<svg class="ic"><use href="#i-bm0"/></svg><b></b><span></span>';
+    e.querySelector('b').textContent = t.noBookmarks; e.querySelector('span').textContent = t.noBookmarksDesc;
+    box.appendChild(e); return;
+  }
+  bookmarks.forEach(b => {
+    const row = document.createElement('div'); row.className = 'bm-item';
+    const main = document.createElement('div'); main.className = 'bm-main'; main.tabIndex = 0; main.setAttribute('role', 'button');
+    main.innerHTML = '<svg class="ic"><use href="#i-bm"/></svg><div><div class="bm-t"></div><div class="bm-s"></div></div>';
+    main.querySelector('.bm-t').textContent = t.surahWord + surahNames[currentLang][surahOf(b.f)];
+    main.querySelector('.bm-s').textContent = t.pageWord + pageNo(b.f) + '  ·  ' + t.juz + fmt(juzOf(b.f));
+    const go = () => goToFile(b.f);
+    main.onclick = go; main.onkeydown = onKeyActivate(go);
+    const del = document.createElement('button'); del.className = 'bm-del'; del.setAttribute('aria-label', 'delete');
+    del.innerHTML = '<svg class="ic"><use href="#i-trash"/></svg>';
+    del.onclick = () => { bookmarks = bookmarks.filter(x => x.f !== b.f); saveBm(); buildBookmarks(); updateChrome(); };
+    row.append(main, del); box.appendChild(row);
+  });
+}
+const onKeyActivate = fn => e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fn(); } };
+
+// ================== Navigation ==================
+function afterChange() {
+  alignFile(); updateChrome(); resetZoom();
+  try { localStorage.setItem('quranLastPage', String(currentFile)); } catch (e) {}
+  try { history.replaceState(history.state, '', '#' + currentFile); } catch (e) {}
+  render(); prefetchAround();
+}
+function goToFile(n) {
+  closeSplash(); closeAllOverlays();
+  curl.dir = 0; busy = false;
+  currentFile = n; afterChange();
+}
+function settle(tpx, tpy, commit, dur, arc) {
+  busy = true;
+  const px0 = curl.px, py0 = curl.py, dir = curl.dir, t0 = performance.now();
+  const finish = () => {
+    try { if (commit) currentFile += dir * step(); curl.dir = 0; }
+    finally { busy = false; if (commit) afterChange(); else render(); }
+  };
+  const tick = now => {
+    const f = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - f, 3);
+    curl.px = px0 + (tpx - px0) * e;
+    curl.py = py0 + (tpy - py0) * e - (arc ? 0.22 * L.ph * Math.sin(Math.PI * e) : 0);
+    render();
+    if (f < 1) requestAnimationFrame(tick); else finish();
+  };
+  requestAnimationFrame(tick);
+}
+function autoTurn(dir) {                                   // کلید جهت‌دار و دکمه‌های کناری: ورق از گوشهٔ پایین
+  if (busy || scale > 1.05 || !canTurn(dir)) return;
+  curl.dir = dir; curl.cy = L.ph; curl.px = dir > 0 ? 0 : 2 * L.pw; curl.py = L.ph;
+  settle(dir > 0 ? 2 * L.pw : 0, L.ph, true, 620, true);
+}
+const nextPage = () => autoTurn(1), prevPage = () => autoTurn(-1);
+
+// ================== Zoom / Pointer gestures ==================
+const swipe = $('swipeArea'), ptrs = new Map();
+let g = null, pinch = null, scale = 1, tx = 0, ty = 0, lastTap = 0, lastTapPos = { x: 0, y: 0 }, tapT = 0;
+function applyTransform(smooth) {
+  cvs.style.transition = smooth ? 'transform .3s var(--ease)' : 'none';
+  cvs.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+}
+function resetZoom() { scale = 1; tx = ty = 0; applyTransform(true); }
+function clampPan() {
+  const mx = L.cw * (scale - 1) / 2, my = L.ph * (scale - 1) / 2;
+  tx = clamp(tx, -mx, mx); ty = clamp(ty, -my, my);
+}
+function toggleZoom(x, y) {
+  if (scale > 1.05) return resetZoom();
+  const r = cvs.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+  scale = 2.5; tx = -(x - cx) * (scale - 1); ty = -(y - cy) * (scale - 1); clampPan(); applyTransform(true);
+}
+function handleTap(x, y) {
+  const now = Date.now();
+  if (now - lastTap < 300 && Math.hypot(x - lastTapPos.x, y - lastTapPos.y) < 60) {
+    clearTimeout(tapT); lastTap = 0; toggleZoom(x, y); return;
+  }
+  lastTap = now; lastTapPos = { x, y }; clearTimeout(tapT);
+  tapT = setTimeout(() => { lastTap = 0; document.body.classList.toggle('immersive'); }, 300);
+}
+function startCurl(dx) {
+  const dir = dx > 0 ? 1 : -1;                              // کشیدن از چپ به راست = صفحهٔ بعد
+  if (!canTurn(dir)) { g.mode = 'none'; return; }
+  const r = cvs.getBoundingClientRect(), startY = clamp(g.sy - r.top, 0, L.ph);
+  curl.dir = dir;
+  curl.cy = startY < L.ph * 0.2 ? 0 : startY > L.ph * 0.8 ? L.ph : startY;   // نزدیک بالا/پایین به گوشه می‌چسبد
+  curl.px = dir > 0 ? 0 : 2 * L.pw; curl.py = curl.cy;
+  g.mode = 'curl';
+}
+function updateCurl(dx, dy) {
+  const k = 1.25, maxX = 2 * L.pw;
+  curl.px = clamp(curl.dir > 0 ? dx * k : maxX + dx * k, 0, maxX);
+  curl.py = clamp(curl.cy + dy, -0.15 * L.ph, 1.15 * L.ph);
+  scheduleRender();
+}
+function finishCurl(gg, cancelled) {
+  let vx = 0; const s = gg.samples;
+  if (s.length >= 2) { const a = s[0], b = s[s.length - 1], dt = b[1] - a[1]; if (dt > 0) vx = (b[0] - a[0]) / dt * 1000; }
+  const dir = curl.dir, pw = L.pw, maxX = 2 * pw;
+  let commit = false;
+  if (!cancelled) commit = dir > 0 ? ((curl.px > 0.5 * pw && vx > -600) || vx > 1100) : (((maxX - curl.px) > 0.5 * pw && vx < 600) || vx < -1100);
+  const target = dir > 0 ? (commit ? maxX : 0) : (commit ? 0 : maxX);
+  settle(target, curl.cy, commit, 300, false);
+}
+swipe.addEventListener('pointerdown', e => {
+  if (e.target.closest('.nav-btn')) return;
+  if (e.pointerType === 'mouse' && e.button !== 0) return;
+  try { swipe.setPointerCapture(e.pointerId); } catch (_) {}
+  ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (busy) { g = null; return; }
+  if (ptrs.size === 2) {
+    if (curl.dir !== 0) { curl.dir = 0; render(); }
+    const [a, b] = [...ptrs.values()];
+    pinch = { d: Math.hypot(a.x - b.x, a.y - b.y) || 1, s: scale }; g = null; return;
+  }
+  if (ptrs.size === 1) {
+    g = { id: e.pointerId, sx: e.clientX, sy: e.clientY, moved: false, mode: scale > 1.05 ? 'pan' : 'idle', tx0: tx, ty0: ty, samples: [[e.clientX, performance.now()]] };
+  }
+});
+swipe.addEventListener('pointermove', e => {
+  const p = ptrs.get(e.pointerId); if (!p) return;
+  p.x = e.clientX; p.y = e.clientY;
+  if (pinch && ptrs.size >= 2) {
+    const [a, b] = [...ptrs.values()], d = Math.hypot(a.x - b.x, a.y - b.y);
+    scale = clamp(pinch.s * d / pinch.d, 1, 4);
+    if (scale <= 1.02) { tx = ty = 0; } else clampPan();
+    applyTransform(false); return;
+  }
+  if (!g || g.id !== e.pointerId || busy) return;
+  const dx = e.clientX - g.sx, dy = e.clientY - g.sy;
+  if (!g.moved && Math.hypot(dx, dy) > 8) g.moved = true;
+  if (g.mode === 'pan') { if (g.moved) { tx = g.tx0 + dx; ty = g.ty0 + dy; clampPan(); applyTransform(false); } }
+  else if (g.mode === 'idle' && g.moved && Math.abs(dx) > Math.abs(dy) * 0.6) startCurl(dx);
+  if (g.mode === 'curl') updateCurl(dx, dy);
+  g.samples.push([e.clientX, performance.now()]); if (g.samples.length > 8) g.samples.shift();
+});
+function pointerEnd(e) {
+  ptrs.delete(e.pointerId);
+  if (pinch) { if (ptrs.size < 2) pinch = null; if (scale <= 1.02) resetZoom(); g = null; return; }
+  if (!g || g.id !== e.pointerId) return;
+  const gg = g; g = null;
+  if (gg.mode === 'curl') finishCurl(gg, e.type === 'pointercancel');
+  else if ((gg.mode === 'idle' || gg.mode === 'pan') && !gg.moved && e.type === 'pointerup') handleTap(gg.sx, gg.sy);
+}
+swipe.addEventListener('pointerup', pointerEnd);
+swipe.addEventListener('pointercancel', pointerEnd);
+addEventListener('keydown', e => {
+  if (e.target && e.target.tagName === 'INPUT') { if (e.key === 'Escape') closeActiveOverlay(); return; }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); nextPage(); }
+  else if (e.key === 'ArrowRight') { e.preventDefault(); prevPage(); }
+  else if (e.key === 'Escape') closeActiveOverlay();
+});
+
+// ================== Index (فهرست) ==================
+function normName(s) {
+  let r = '';
+  for (const ch of String(s).toLowerCase()) {
+    const c = ch.charCodeAt(0);
+    if ((c >= 0x064B && c <= 0x065F) || c === 0x0670 || c === 0x200C || ch === 'ـ' || ch === ' ') continue;
+    r += ({ 'ي': 'ی', 'ى': 'ی', 'ئ': 'ی', 'ك': 'ک', 'ة': 'ه', 'أ': 'ا', 'إ': 'ا', 'آ': 'ا', 'ؤ': 'و' })[ch] || ch;
+  }
+  if (r.startsWith('ال') && r.length > 3) r = r.slice(2);
+  return r;
+}
+const normalizeDigits = s => String(s).replace(/[۰-۹]/g, d => d.charCodeAt(0) - 0x06F0).replace(/[٠-٩]/g, d => d.charCodeAt(0) - 0x0660);
+function surahMatches(i, q) {
+  q = normalizeDigits(q).trim();
+  if (!q) return true;
+  if (/^\d+$/.test(q)) return String(i + 1).startsWith(q);
+  const n = normName(q);
+  return normName(surahNames.fa[i]).includes(n) || normName(surahNames.ar[i]).includes(n);
+}
+function gridItem(num, name, sub, cur, onSelect) {
+  const d = document.createElement('div');
+  d.className = 'grid-item' + (cur ? ' cur' : ''); d.tabIndex = 0; d.setAttribute('role', 'button');
+  d.innerHTML = '<div class="grid-num"></div><div class="grid-txt"><div class="grid-name"></div><div class="grid-sub"></div></div>';
+  d.querySelector('.grid-num').textContent = fmt(num);
+  d.querySelector('.grid-name').textContent = name;
+  d.querySelector('.grid-sub').textContent = sub;
+  d.onclick = onSelect; d.onkeydown = onKeyActivate(onSelect);
+  return d;
+}
+const juzStart = j => j === 1 ? 2 : j === 30 ? 587 : 3 + (j - 1) * 20;
+function buildJuzGrid() {
+  const g = $('juzGrid'), t = T(); g.textContent = '';
+  const cur = juzOf(spread ? currentFile + 1 : currentFile);
+  for (let i = 1; i <= 30; i++) {
+    const start = juzStart(i);
+    g.appendChild(gridItem(i, t.juz + juzOrdinals[currentLang][i - 1], t.pageWord + pageNo(start), i === cur, () => goToFile(start)));
+  }
+}
+function buildSurahGrid() {
+  const g = $('surahGrid'), t = T(), q = $('surahSearch').value; g.textContent = '';
+  const cur = surahOf(spread ? currentFile + 1 : currentFile);
+  let n = 0;
+  for (let i = 0; i < 114; i++) {
+    if (!surahMatches(i, q)) continue;
+    n++;
+    const file = surahPages[i] + 1;
+    g.appendChild(gridItem(i + 1, surahNames[currentLang][i], t.pageWord + pageNo(file), i === cur, () => goToFile(file)));
+  }
+  if (!n) { const e = document.createElement('div'); e.className = 'empty'; e.style.gridColumn = '1/-1'; e.textContent = t.noResults; g.appendChild(e); }
+}
+function setIdxTab(i) {
+  $('tabJuzBtn').classList.toggle('active', i === 0); $('tabSurahBtn').classList.toggle('active', i === 1);
+  $('juzTabContent').style.display = i === 0 ? 'block' : 'none';
+  $('surahTabContent').style.display = i === 1 ? 'block' : 'none';
+  $('searchBox').style.display = i === 1 ? 'flex' : 'none';
+  const cur = (i === 0 ? $('juzGrid') : $('surahGrid')).querySelector('.cur');
+  if (cur) cur.scrollIntoView({ block: 'center' });
+}
+function refreshIndex() {
+  buildJuzGrid(); buildSurahGrid();
+  setIdxTab($('tabSurahBtn').classList.contains('active') ? 1 : 0);
+}
+
+// ================== Go to page ==================
+function openGoto() {
+  const i = $('gotoInput'), t = T();
+  i.value = ''; i.classList.remove('err'); $('gotoErr').textContent = '';
+  i.placeholder = t.goHint.replace('{min}', fmt(FIRST_FILE - PAGE_OFFSET)).replace('{max}', fmt(totalFiles - PAGE_OFFSET));
+  setTimeout(() => i.focus(), 120);
+}
+function doGoto() {
+  const i = $('gotoInput'), n = parseInt(normalizeDigits(i.value), 10);
+  const lo = FIRST_FILE - PAGE_OFFSET, hi = totalFiles - PAGE_OFFSET;
+  if (n >= lo && n <= hi) goToFile(n + PAGE_OFFSET);
+  else { i.classList.add('err'); $('gotoErr').textContent = T().invalidPage; }
+}
+
+// ================== Offline download ==================
+async function getFileSet() {
+  const set = new Set();
+  try {
+    const cache = await caches.open(IMAGE_CACHE_NAME);
+    (await cache.keys()).forEach(r => {
+      const m = r.url.match(/Quran(\d{3})\.(?:jpg|webp)/);
+      if (m) { const n = parseInt(m[1], 10); if (n >= FIRST_FILE && n <= totalFiles) set.add(n); }
+    });
+  } catch (e) {}
+  return set;
+}
+async function checkStatus() {
+  const count = (await getFileSet()).size;
+  return { count, status: count >= TOTAL - TOLERANCE ? 'complete' : count > 0 ? 'partial' : 'none' };
+}
+function updateStorageVisibility() {
+  $('rowDelete').style.display = downloadStatus === 'none' ? 'none' : 'flex';
+  $('rowDownload').style.display = downloadStatus === 'complete' ? 'none' : 'flex';
+}
+async function updateStatusUI() {
+  const el = $('downloadStatus');
+  if (downloadStatus === 'partial') {
+    const { count } = await checkStatus();
+    el.textContent = T().partialStatus.replace('{count}', fmt(count)).replace('{total}', fmt(TOTAL));
+    el.classList.add('visible');
+  } else el.classList.remove('visible');
+}
+function setDownloadedUI() { downloadStatus = 'complete'; updateStorageVisibility(); updateStatusUI(); }
+function resetDownloadedUI() { downloadStatus = 'none'; updateStorageVisibility(); updateStatusUI(); }
+
+async function fetchImageToCache(name, cache) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const resp = await fetch(IMAGE_BASE + name, { mode: 'cors', cache: 'no-store' });
+      if (resp.ok && (resp.headers.get('content-type') || '').startsWith('image/')) {
+        await cache.put('images/' + name, resp);
+        return true;
+      }
+    } catch (e) {}
+    await new Promise(r => setTimeout(r, 400 * (attempt + 1)));
+  }
+  return false;
+}
+async function startDownload() {
+  if (downloading) return;
+  closeOverlay('downloadOverlay');
+  const t = T();
+  if (navigator.storage && navigator.storage.estimate) {
+    try {
+      const { quota, usage } = await navigator.storage.estimate();
+      if (quota && quota - usage < 320 * 1048576) { await dialog(t.noSpaceMsg, t.confirmDownloadTitle); return; }
+    } catch (e) {}
+  }
+  const existing = await getFileSet();
+  const resume = existing.size > 0;
+  const ok = await dialog(resume ? t.confirmResumeMsg.replace('{count}', fmt(existing.size)) : t.confirmDownloadMsg, resume ? t.confirmResumeTitle : t.confirmDownloadTitle, true);
+  if (!ok) return;
+
+  downloading = true;
+  if (navigator.storage && navigator.storage.persist) { try { await navigator.storage.persist(); } catch (e) {} }
+  const pill = $('progressPill');
+  $('rowDownload').style.pointerEvents = 'none';
+  pill.style.display = 'block';
+
+  let done = existing.size, failed = 0;
+  const show = () => { pill.textContent = t.progress.replace('{current}', fmt(Math.min(done + failed, TOTAL))).replace('{total}', fmt(TOTAL)); };
+  show();
+  try {
+    const cache = await caches.open(IMAGE_CACHE_NAME);
+    const queue = [];
+    for (let n = FIRST_FILE; n <= totalFiles; n++) if (!existing.has(n)) queue.push(n);
+    let idx = 0;
+    const worker = async () => {
+      while (idx < queue.length) {
+        const n = queue[idx++];
+        if (await fetchImageToCache(fileName(n), cache)) done++; else failed++;
+        show();
+      }
+    };
+    await Promise.all(Array.from({ length: 6 }, worker));
+    const st = await checkStatus();
+    downloadStatus = st.status;
+    if (st.status === 'complete') {
+      setDownloadedUI();
+      await dialog(t.downloadSuccess, t.confirmDownloadTitle);
+    } else {
+      updateStorageVisibility(); updateStatusUI();
+      await dialog(t.partialMsg.replace('{count}', fmt(TOTAL - st.count)), t.confirmDownloadTitle);
+    }
+  } catch (err) {
+    console.error('Download error', err);
+    const st = await checkStatus();
+    downloadStatus = st.status === 'complete' ? 'partial' : st.status;
+    updateStorageVisibility(); updateStatusUI();
+    await dialog(t.downloadError, t.confirmDownloadTitle);
+  } finally {
+    downloading = false;
+    pill.style.display = 'none';
+    $('rowDownload').style.pointerEvents = 'auto';
+  }
+}
+async function deleteOfflineFiles() {
+  const t = T();
+  if (!(await dialog(t.confirmDeleteMsg, t.confirmDeleteTitle, true))) return;
+  try {
+    await caches.delete(IMAGE_CACHE_NAME);
+    resetDownloadedUI();
+    await dialog(t.deleteSuccess, t.confirmDeleteTitle);
+  } catch (e) {
+    await dialog(t.deleteError, t.confirmDeleteTitle);
+  }
+}
+
+// ================== Events ==================
+$('btnMenu').onclick = () => openOverlay('juzOverlay');
+$('hdrJuz').onclick = () => { openOverlay('juzOverlay'); setIdxTab(0); };
+$('hdrSurah').onclick = () => { openOverlay('juzOverlay'); setIdxTab(1); };
+$('btnBm').onclick = toggleBookmark;
+$('btnBookmarks').onclick = () => openOverlay('bmOverlay');
+$('btnGoto').onclick = () => openOverlay('gotoOverlay');
+$('btnQuick').onclick = toggleQuick;
+$('btnThemeHome').onclick = toggleQuick;
+$('btnSettings').onclick = () => openOverlay('settingsOverlay');
+$('btnFullscreen').onclick = () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {}); else document.exitFullscreen(); };
+document.addEventListener('fullscreenchange', () => document.body.classList.toggle('is-fs', !!document.fullscreenElement));
+$('navRight').onclick = prevPage;
+$('navLeft').onclick = nextPage;
+$('splashContinue').onclick = closeSplash;
+$('tbHome').onclick = closeAllOverlays;
+$('tbIndex').onclick = () => openOverlay('juzOverlay');
+$('tbBm').onclick = () => openOverlay('bmOverlay');
+$('tbSet').onclick = () => openOverlay('settingsOverlay');
+$('themeModernBtn').onclick = () => setThemeStyle('modern');
+$('themeAbiBtn').onclick = () => setThemeStyle('abi');
+$('themeDayBtn').onclick = () => setThemeMode('day');
+$('themeNightBtn').onclick = () => setThemeMode('night');
+$('themeAutoBtn').onclick = () => setThemeMode('auto');
+$('darkPagesRow').onclick = () => setDarkPages(!darkPages);
+$('darkPagesRow').onkeydown = onKeyActivate(() => setDarkPages(!darkPages));
+$('langFa').onclick = () => setLanguage('fa');
+$('langAr').onclick = () => setLanguage('ar');
+$('settingsClose').onclick = () => closeOverlay('settingsOverlay');
+$('downloadClose').onclick = () => closeOverlay('downloadOverlay');
+$('rowDownload').onclick = () => { closeOverlay('settingsOverlay'); openOverlay('downloadOverlay'); };
+$('rowDownload').onkeydown = onKeyActivate(() => $('rowDownload').click());
+$('rowDelete').onclick = deleteOfflineFiles;
+$('rowDelete').onkeydown = onKeyActivate(deleteOfflineFiles);
+$('dlHQ').onclick = () => startDownload();
+$('installPwaBtn').onclick = async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt(); await deferredPrompt.userChoice;
+  deferredPrompt = null; $('installPwaBtn').style.display = 'none';
+};
+$('tabJuzBtn').onclick = () => setIdxTab(0);
+$('tabSurahBtn').onclick = () => setIdxTab(1);
+$('surahSearch').oninput = buildSurahGrid;
+$('gotoGo').onclick = doGoto;
+$('gotoInput').onkeydown = e => { if (e.key === 'Enter') doGoto(); };
+$('gotoInput').oninput = e => { e.target.value = normalizeDigits(e.target.value).replace(/\D/g, '').slice(0, 3); e.target.classList.remove('err'); $('gotoErr').textContent = ''; };
+OVERLAYS.forEach(id => { $(id).querySelector('.overlay-backdrop').onclick = () => closeOverlay(id); });
+
+// دکمهٔ بازگشت: ابتدا بستن پنجره‌ها، بعد برگشت به صفحهٔ خوش‌آمد
+history.replaceState({ quranApp: true }, '');
+history.pushState({ quranApp: true, level: 1 }, '');
+addEventListener('popstate', () => {
+  if (closeActiveOverlay()) { history.pushState({ quranApp: true, level: 1 }, ''); return; }
+  const splash = $('splashOverlay');
+  if (!splash.classList.contains('active')) { splash.classList.add('active'); history.pushState({ quranApp: true, level: 1 }, ''); }
+});
+
+// ================== Init ==================
+(async function init() {
+  applyTheme();
+  setLanguage(currentLang);
+  const fromHash = parseInt((location.hash || '').slice(1), 10);
+  const saved = parseInt(localStorage.getItem('quranLastPage'), 10);
+  currentFile = !isNaN(fromHash) ? fromHash : !isNaN(saved) ? saved : FIRST_FILE;
+  currentFile = clamp(currentFile, FIRST_FILE, totalFiles);
+  layout();
+  alignFile(); updateChrome(); render(); prefetchAround();
+  const st = await checkStatus();
+  downloadStatus = st.status;
+  if (st.status === 'complete') setDownloadedUI();
+  else { updateStorageVisibility(); updateStatusUI(); }
+})();
+
+</script>
+</body>
+</html>
